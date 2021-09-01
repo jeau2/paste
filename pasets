@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.ArrayList;
+
+public class Occurrences
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a word or phrase: ");
+        String word = in.nextLine();
+
+        int firstLocation = 0;
+        int secondLocation = 0;
+
+        /* PUT YOU CODE BELOW.  DO NOT EDIT CODE ABOVE 
+        * Assign firstLocation to the first location of "ss" in word
+        * Assign secondLocation to the second location of "ss" in word
+        */
+
+        //your code goes here
+        ArrayList<Integer> occurrences = new ArrayList<Integer>(); 
+        Pattern pattern = Pattern.compile("ss");
+        Matcher matcher = pattern.matcher(word);
+        // Check all occurrences
+        while (matcher.find()) {
+            occurrences.add(matcher.start());
+        }
+        firstLocation = occurrences.get(0);
+        secondLocation = occurrences.get(1);
+
+        //do not change code below
+        System.out.println(firstLocation + "," + secondLocation);
+    }
+}
